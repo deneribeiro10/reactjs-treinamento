@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {Container, Main} from './mainStyle'
 import './reset.css'
 import Header from './components/Header'
+import NewTask from './components/NewTask'
 
 import { v4 as uuidv4 } from "uuid"
 
@@ -23,6 +24,8 @@ function App() {
     <Container>
       <Header />
       <Main>
+        <NewTask tasks={tasks} setTasks={setTasks} />
+
         {
           tasks && 
           tasks.length > 0 &&
