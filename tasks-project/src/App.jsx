@@ -21,12 +21,33 @@ function App() {
     },
   ]);
 
+  const deleteAllTasks = () => {
+    setTasks([])
+  }
+
+  const completeAllTasks = () => {
+    setTasks(
+      tasks => tasks.map(t => ({
+        ...t,
+        isComplete: true
+      }))
+    )
+  }
+
   return (
     <Container>
       <Header />
       <Main>
         <NewTask tasks={tasks} setTasks={setTasks} />
         <Tasks tasks={tasks} setTasks={setTasks} />
+        {
+          tasks &&
+          tasks.length > 0 &&
+          <>
+            <button onClick={deleteAllTasks}>Deletar Tudo</button>
+            <button onClick={completeAllTasks}>Completar tudo</button>
+          </>
+        }
       </Main>
     </Container>
   )
