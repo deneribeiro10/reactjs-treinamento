@@ -19,5 +19,5 @@ export const Main = styled.main`
   width: 100%;
   max-width: 736px;
 
-  margin-top: -25px;
+//   margin-top: -25px;
 `;
