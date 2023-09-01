@@ -3,6 +3,7 @@ import {Container, Main} from './mainStyle'
 import './reset.css'
 import Header from './components/Header'
 import NewTask from './components/NewTask'
+import Tasks from './components/Tasks'
 
 import { v4 as uuidv4 } from "uuid"
 
@@ -25,14 +26,7 @@ function App() {
       <Header />
       <Main>
         <NewTask tasks={tasks} setTasks={setTasks} />
-
-        {
-          tasks && 
-          tasks.length > 0 &&
-          tasks.map((task) => (
-            <div style={{color: "white"}}>{task.title}</div>
-          ))
-        }
+        <Tasks tasks={tasks} setTasks={setTasks} />
       </Main>
     </Container>
   )
